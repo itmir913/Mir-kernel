@@ -110,6 +110,79 @@ config CPU_FREQ_DEFAULT_GOV_CONSERVATIVE
 	  Be aware that not all cpufreq drivers support the conservative
 	  governor. If unsure have a look at the help section of the
 	  driver. Fallback governor will be the performance governor.
+
+config CPU_FREQ_DEFAULT_GOV_LAZY
+ bool "lazy"
+ select CPU_FREQ_GOV_LAZY
+ help
+  Use the CPUFreq governor 'lazy' as default.
+
+config CPU_FREQ_DEFAULT_GOV_SMOOTHASS
+ bool "smoothass"
+ select CPU_FREQ_GOV_SMOOTHASS
+ select CPU_FREQ_GOV_PERFORMANCE
+ help
+  Use the CPUFreq governor 'smoothass' as default.
+
+config CPU_FREQ_DEFAULT_GOV_SMARTASS2
+ bool "smartass2"
+ select CPU_FREQ_GOV_SMARTASS2
+ help
+  Use the CPUFreq governor 'smartassV2' as default.
+
+config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
+ bool "interactive"
+ select CPU_FREQ_GOV_INTERACTIVE
+ help
+  Use the CPUFreq governor 'interactive' as default.
+
+config CPU_FREQ_DEFAULT_GOV_INTERACTIVEX
+ bool "interactivex"
+ select CPU_FREQ_GOV_INTERACTIVEX
+ help
+  Use the CPUFreq governor 'interactivex' as default.
+
+config CPU_FREQ_DEFAULT_GOV_LAGFREE
+ bool "lagfree"
+ select CPU_FREQ_GOV_LAGFREE
+ help
+  Use the CPUFreq governor 'lagfree' as default.
+
+config CPU_FREQ_DEFAULT_GOV_LULZACTIVE
+ bool "lulzactive"
+ select CPU_FREQ_GOV_LULZACTIVE
+ help
+  Use the CPUFreq governor 'lulzactive' as default.
+
+config CPU_FREQ_DEFAULT_GOV_SMARTASS
+	bool "smartass"
+	select CPU_FREQ_GOV_SMARTASS
+	help
+	  Use the CPUFreq governor 'smartass' as default.
+
+config CPU_FREQ_DEFAULT_GOV_ONDEMANDX
+ bool "ondemandx"
+ select CPU_FREQ_GOV_ONDEMANDX
+ help
+  Use the CPUFreq governor 'ondemandx' as default.
+
+config CPU_FREQ_DEFAULT_GOV_SAVAGEDZEN
+ bool "savagedzen"
+ select CPU_FREQ_GOV_SAVAGEDZEN
+ help
+  Use the CPUFreq governor 'savagedzen' as default.
+
+config CPU_FREQ_DEFAULT_GOV_SUPERBAD
+ bool "superbad"
+ select CPU_FREQ_GOV_SUPERBAD
+ help
+  Use the CPUFreq governor 'superbad' as default.
+
+config CPU_FREQ_DEFAULT_GOV_DARKSIDE
+ bool "darkside"
+ select CPU_FREQ_GOV_DARKSIDE
+ help
+  Use the CPUFreq governor 'darkside' as default.
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -208,4 +281,92 @@ config CPU_FREQ_PERFLOCK_USERSPACE
     Write "perfname" to /sys/devices/system/cpu/cpu0/cpufreq/perf_unlock
     to unlock a user performance lock.
 
+config CPU_FREQ_GOV_LAZY
+ tristate "'lazy' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'lazy' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_LULZACTIVE
+ tristate "'lulzactive' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'lulzactive' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_SMOOTHASS
+  tristate "'smoothass' cpufreq governor"
+  depends on CPU_FREQ
+  default y
+  help
+  smoothass' - a "slightly more agressive smartass" governor!
+
+config CPU_FREQ_GOV_SMARTASS2
+ tristate "'smartassV2' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'smartassV2' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_INTERACTIVE
+ tristate "'interactive' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'interactive' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_INTERACTIVEX
+ tristate "'interactivex' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'interactivex' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_LAGFREE
+ tristate "'lagfree' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'lagfree' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_LULZACTIVE
+ tristate "'lulzactive' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'lulzactive' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_SMARTASS
+ tristate "'smartass' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+
+config CPU_FREQ_GOV_ONDEMANDX
+ tristate "'ondemandx' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'ondemandx' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_SAVAGEDZEN
+ tristate "'savagedzen' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'savagedzen' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_SUPERBAD
+ tristate "'superbad' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'superbad' - a "smart" optimized governor for the hero!
+
+config CPU_FREQ_GOV_DARKSIDE
+ tristate "'darkside' cpufreq governor"
+ depends on CPU_FREQ
+ default y
+ help
+   'darkside' - a "smart" optimized governor for the hero!
 endif	# CPU_FREQ
