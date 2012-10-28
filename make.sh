@@ -45,6 +45,6 @@ fi
 if [ -f $image_filename ]; then
 	echo "   making boot.img"
 	./mkbootimg --cmdline "console=ttyHSL1,115200n8 androidboot.hardware=qcom loglevel=0 log_" --base 0x00200000 --pagesize 4096 --kernel $image_filename --ramdisk ramdisk.gz -o ../boot-new.img
+	cp -f $ODIR/drivers/net/wireless/bcm4329/wlan.ko ..
 fi
-
 
