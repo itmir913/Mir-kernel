@@ -1,0 +1,11 @@
+--- arch/arm/mach-vexpress/ct-ca9x4.c	2010-09-29 10:09:08.000000000 +0900
++++ arch/arm/mach-vexpress/ct-ca9x4.c	2010-10-29 13:52:43.000000000 +0900
+@@ -225,7 +225,7 @@
+ 	int i;
+ 
+ #ifdef CONFIG_CACHE_L2X0
+-	l2x0_init(MMIO_P2V(CT_CA9X4_L2CC), 0x00000000, 0xfe0fffff);
++	l2x0_init(MMIO_P2V(CT_CA9X4_L2CC), 0x00400000, 0xfe0fffff);
+ #endif
+ 
+ 	clkdev_add_table(lookups, ARRAY_SIZE(lookups));
